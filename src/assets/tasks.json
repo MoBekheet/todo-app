@@ -1,0 +1,524 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "taskName": "Complete Angular Project",
+      "startDate": "2024-01-20T10:00:00Z",
+      "days": 5,
+      "dueDate": "2024-01-25T10:00:00Z",
+      "items": [
+        "Task item 1",
+        "Task item 2"
+      ],
+      "status": "New",
+      "description": "This is a description for the task."
+    },
+    {
+      "id": 2,
+      "taskName": "Review Code",
+      "startDate": "2024-01-22T09:00:00Z",
+      "days": 3,
+      "dueDate": "2024-01-25T09:00:00Z",
+      "items": [
+        "Review component A",
+        "Review component B"
+      ],
+      "status": "In progress",
+      "description": "Review and provide feedback on the code changes."
+    },
+    {
+      "id": 3,
+      "taskName": "Prepare Presentation",
+      "startDate": "2024-01-24T14:00:00Z",
+      "days": 2,
+      "dueDate": "2024-01-26T14:00:00Z",
+      "items": [
+        "Create slides",
+        "Practice delivery"
+      ],
+      "status": "On hold",
+      "description": "Prepare a presentation for the upcoming meeting."
+    },
+    {
+      "id": 4,
+      "taskName": "Complete Testing",
+      "startDate": "2024-01-25T08:00:00Z",
+      "days": 4,
+      "dueDate": "2024-01-29T08:00:00Z",
+      "items": [
+        "Write test cases",
+        "Execute tests"
+      ],
+      "status": "Completed",
+      "description": "Ensure all features are thoroughly tested."
+    },
+    {
+      "id": 5,
+      "taskName": "Bug Fixes",
+      "startDate": "2024-01-27T11:00:00Z",
+      "days": 2,
+      "dueDate": "2024-01-29T11:00:00Z",
+      "items": [
+        "Identify bugs",
+        "Fix bugs"
+      ],
+      "status": "In progress",
+      "description": "Address any reported bugs in the application."
+    },
+    {
+      "id": 6,
+      "taskName": "Feature Development",
+      "startDate": "2024-01-30T09:00:00Z",
+      "days": 6,
+      "dueDate": "2024-02-05T09:00:00Z",
+      "items": [
+        "Implement feature A",
+        "Test feature B"
+      ],
+      "status": "New",
+      "description": "Develop new features for the application."
+    },
+    {
+      "id": 7,
+      "taskName": "Code Refactoring",
+      "startDate": "2024-02-03T13:00:00Z",
+      "days": 3,
+      "dueDate": "2024-02-06T13:00:00Z",
+      "items": [
+        "Refactor module C",
+        "Optimize code"
+      ],
+      "status": "In progress",
+      "description": "Improve code quality and maintainability."
+    },
+    {
+      "id": 8,
+      "taskName": "User Documentation",
+      "startDate": "2024-02-07T10:00:00Z",
+      "days": 4,
+      "dueDate": "2024-02-11T10:00:00Z",
+      "items": [
+        "Write user guide",
+        "Update help section"
+      ],
+      "status": "On hold",
+      "description": "Create documentation for end-users."
+    },
+    {
+      "id": 9,
+      "taskName": "Performance Testing",
+      "startDate": "2024-02-10T08:00:00Z",
+      "days": 2,
+      "dueDate": "2024-02-12T08:00:00Z",
+      "items": [
+        "Run load tests",
+        "Analyze performance"
+      ],
+      "status": "In progress",
+      "description": "Evaluate application performance under heavy loads."
+    },
+    {
+      "id": 10,
+      "taskName": "Security Audit",
+      "startDate": "2024-02-13T11:00:00Z",
+      "days": 5,
+      "dueDate": "2024-02-18T11:00:00Z",
+      "items": [
+        "Conduct security review",
+        "Address vulnerabilities"
+      ],
+      "status": "Completed",
+      "description": "Ensure the application is secure against potential threats."
+    },
+    {
+      "id": 11,
+      "taskName": "Database Migration",
+      "startDate": "2024-02-20T14:00:00Z",
+      "days": 3,
+      "dueDate": "2024-02-23T14:00:00Z",
+      "items": [
+        "Backup data",
+        "Migrate to new database"
+      ],
+      "status": "New",
+      "description": "Perform migration to the latest database version."
+    },
+    {
+      "id": 12,
+      "taskName": "Mobile App Integration",
+      "startDate": "2024-02-22T11:00:00Z",
+      "days": 5,
+      "dueDate": "2024-02-27T11:00:00Z",
+      "items": [
+        "Integrate with mobile app",
+        "Test mobile compatibility"
+      ],
+      "status": "In progress",
+      "description": "Ensure compatibility and smooth integration with the mobile application."
+    },
+    {
+      "id": 13,
+      "taskName": "Client Meetings",
+      "startDate": "2024-02-25T09:00:00Z",
+      "days": 2,
+      "dueDate": "2024-02-27T09:00:00Z",
+      "items": [
+        "Prepare meeting agenda",
+        "Conduct client meetings"
+      ],
+      "status": "On hold",
+      "description": "Engage in meetings with clients to discuss project progress."
+    },
+    {
+      "id": 14,
+      "taskName": "API Documentation",
+      "startDate": "2024-02-28T08:00:00Z",
+      "days": 4,
+      "dueDate": "2024-03-03T08:00:00Z",
+      "items": [
+        "Write API documentation",
+        "Update API endpoints"
+      ],
+      "status": "Completed",
+      "description": "Create documentation for application programming interfaces (APIs)."
+    },
+    {
+      "id": 15,
+      "taskName": "Release Planning",
+      "startDate": "2024-03-02T13:00:00Z",
+      "days": 3,
+      "dueDate": "2024-03-05T13:00:00Z",
+      "items": [
+        "Plan for software release",
+        "Coordinate release activities"
+      ],
+      "status": "New",
+      "description": "Coordinate activities for the upcoming software release."
+    },
+    {
+      "id": 16,
+      "taskName": "Client Training",
+      "startDate": "2024-03-08T10:00:00Z",
+      "days": 2,
+      "dueDate": "2024-03-10T10:00:00Z",
+      "items": [
+        "Prepare training materials",
+        "Conduct client training sessions"
+      ],
+      "status": "Completed",
+      "description": "Train clients on how to use the application effectively."
+    },
+    {
+      "id": 17,
+      "taskName": "Release Testing",
+      "startDate": "2024-03-11T14:00:00Z",
+      "days": 3,
+      "dueDate": "2024-03-14T14:00:00Z",
+      "items": [
+        "Perform regression testing",
+        "Verify release readiness"
+      ],
+      "status": "Completed",
+      "description": "Ensure the stability and quality of the upcoming release."
+    },
+    {
+      "id": 18,
+      "taskName": "User Feedback Collection",
+      "startDate": "2024-03-15T09:00:00Z",
+      "days": 4,
+      "dueDate": "2024-03-19T09:00:00Z",
+      "items": [
+        "Launch user survey",
+        "Analyze user feedback"
+      ],
+      "status": "New",
+      "description": "Gather feedback from end-users to improve the application."
+    },
+    {
+      "id": 19,
+      "taskName": "Integration Testing",
+      "startDate": "2024-03-18T08:00:00Z",
+      "days": 2,
+      "dueDate": "2024-03-20T08:00:00Z",
+      "items": [
+        "Conduct system integration tests",
+        "Resolve integration issues"
+      ],
+      "status": "In progress",
+      "description": "Test the interaction between different system components."
+    },
+    {
+      "id": 20,
+      "taskName": "Documentation Update",
+      "startDate": "2024-03-21T13:00:00Z",
+      "days": 3,
+      "dueDate": "2024-03-24T13:00:00Z",
+      "items": [
+        "Update user manuals",
+        "Revise technical documentation"
+      ],
+      "status": "On hold",
+      "description": "Keep documentation up-to-date with the latest changes."
+    },
+    {
+      "id": 21,
+      "taskName": "Complete Angular Project",
+      "startDate": "2024-01-20T10:00:00Z",
+      "days": 5,
+      "dueDate": "2024-01-25T10:00:00Z",
+      "items": [
+        "Task item 1",
+        "Task item 2"
+      ],
+      "status": "New",
+      "description": "This is a description for the task."
+    },
+    {
+      "id": 22,
+      "taskName": "Review Code",
+      "startDate": "2024-01-22T09:00:00Z",
+      "days": 3,
+      "dueDate": "2024-01-25T09:00:00Z",
+      "items": [
+        "Review component A",
+        "Review component B"
+      ],
+      "status": "In progress",
+      "description": "Review and provide feedback on the code changes."
+    },
+    {
+      "id": 23,
+      "taskName": "Prepare Presentation",
+      "startDate": "2024-01-24T14:00:00Z",
+      "days": 2,
+      "dueDate": "2024-01-26T14:00:00Z",
+      "items": [
+        "Create slides",
+        "Practice delivery"
+      ],
+      "status": "On hold",
+      "description": "Prepare a presentation for the upcoming meeting."
+    },
+    {
+      "id": 24,
+      "taskName": "Complete Testing",
+      "startDate": "2024-01-25T08:00:00Z",
+      "days": 4,
+      "dueDate": "2024-01-29T08:00:00Z",
+      "items": [
+        "Write test cases",
+        "Execute tests"
+      ],
+      "status": "Completed",
+      "description": "Ensure all features are thoroughly tested."
+    },
+    {
+      "id": 25,
+      "taskName": "Bug Fixes",
+      "startDate": "2024-01-27T11:00:00Z",
+      "days": 2,
+      "dueDate": "2024-01-29T11:00:00Z",
+      "items": [
+        "Identify bugs",
+        "Fix bugs"
+      ],
+      "status": "In progress",
+      "description": "Address any reported bugs in the application."
+    },
+    {
+      "id": 26,
+      "taskName": "Feature Development",
+      "startDate": "2024-01-30T09:00:00Z",
+      "days": 6,
+      "dueDate": "2024-02-05T09:00:00Z",
+      "items": [
+        "Implement feature A",
+        "Test feature B"
+      ],
+      "status": "New",
+      "description": "Develop new features for the application."
+    },
+    {
+      "id": 27,
+      "taskName": "Code Refactoring",
+      "startDate": "2024-02-03T13:00:00Z",
+      "days": 3,
+      "dueDate": "2024-02-06T13:00:00Z",
+      "items": [
+        "Refactor module C",
+        "Optimize code"
+      ],
+      "status": "In progress",
+      "description": "Improve code quality and maintainability."
+    },
+    {
+      "id": 28,
+      "taskName": "User Documentation",
+      "startDate": "2024-02-07T10:00:00Z",
+      "days": 4,
+      "dueDate": "2024-02-11T10:00:00Z",
+      "items": [
+        "Write user guide",
+        "Update help section"
+      ],
+      "status": "On hold",
+      "description": "Create documentation for end-users."
+    },
+    {
+      "id": 29,
+      "taskName": "Performance Testing",
+      "startDate": "2024-02-10T08:00:00Z",
+      "days": 2,
+      "dueDate": "2024-02-12T08:00:00Z",
+      "items": [
+        "Run load tests",
+        "Analyze performance"
+      ],
+      "status": "In progress",
+      "description": "Evaluate application performance under heavy loads."
+    },
+    {
+      "id": 30,
+      "taskName": "Security Audit",
+      "startDate": "2024-02-13T11:00:00Z",
+      "days": 5,
+      "dueDate": "2024-02-18T11:00:00Z",
+      "items": [
+        "Conduct security review",
+        "Address vulnerabilities"
+      ],
+      "status": "Completed",
+      "description": "Ensure the application is secure against potential threats."
+    },
+    {
+      "id": 31,
+      "taskName": "Database Migration",
+      "startDate": "2024-02-20T14:00:00Z",
+      "days": 3,
+      "dueDate": "2024-02-23T14:00:00Z",
+      "items": [
+        "Backup data",
+        "Migrate to new database"
+      ],
+      "status": "New",
+      "description": "Perform migration to the latest database version."
+    },
+    {
+      "id": 32,
+      "taskName": "Mobile App Integration",
+      "startDate": "2024-02-22T11:00:00Z",
+      "days": 5,
+      "dueDate": "2024-02-27T11:00:00Z",
+      "items": [
+        "Integrate with mobile app",
+        "Test mobile compatibility"
+      ],
+      "status": "In progress",
+      "description": "Ensure compatibility and smooth integration with the mobile application."
+    },
+    {
+      "id": 33,
+      "taskName": "Client Meetings",
+      "startDate": "2024-02-25T09:00:00Z",
+      "days": 2,
+      "dueDate": "2024-02-27T09:00:00Z",
+      "items": [
+        "Prepare meeting agenda",
+        "Conduct client meetings"
+      ],
+      "status": "On hold",
+      "description": "Engage in meetings with clients to discuss project progress."
+    },
+    {
+      "id": 34,
+      "taskName": "API Documentation",
+      "startDate": "2024-02-28T08:00:00Z",
+      "days": 4,
+      "dueDate": "2024-03-03T08:00:00Z",
+      "items": [
+        "Write API documentation",
+        "Update API endpoints"
+      ],
+      "status": "Completed",
+      "description": "Create documentation for application programming interfaces (APIs)."
+    },
+    {
+      "id": 35,
+      "taskName": "Release Planning",
+      "startDate": "2024-03-02T13:00:00Z",
+      "days": 3,
+      "dueDate": "2024-03-05T13:00:00Z",
+      "items": [
+        "Plan for software release",
+        "Coordinate release activities"
+      ],
+      "status": "New",
+      "description": "Coordinate activities for the upcoming software release."
+    },
+    {
+      "id": 36,
+      "taskName": "Client Training",
+      "startDate": "2024-03-08T10:00:00Z",
+      "days": 2,
+      "dueDate": "2024-03-10T10:00:00Z",
+      "items": [
+        "Prepare training materials",
+        "Conduct client training sessions"
+      ],
+      "status": "Completed",
+      "description": "Train clients on how to use the application effectively."
+    },
+    {
+      "id": 37,
+      "taskName": "Release Testing",
+      "startDate": "2024-03-11T14:00:00Z",
+      "days": 3,
+      "dueDate": "2024-03-14T14:00:00Z",
+      "items": [
+        "Perform regression testing",
+        "Verify release readiness"
+      ],
+      "status": "Completed",
+      "description": "Ensure the stability and quality of the upcoming release."
+    },
+    {
+      "id": 38,
+      "taskName": "User Feedback Collection",
+      "startDate": "2024-03-15T09:00:00Z",
+      "days": 4,
+      "dueDate": "2024-03-19T09:00:00Z",
+      "items": [
+        "Launch user survey",
+        "Analyze user feedback"
+      ],
+      "status": "New",
+      "description": "Gather feedback from end-users to improve the application."
+    },
+    {
+      "id": 39,
+      "taskName": "Integration Testing",
+      "startDate": "2024-03-18T08:00:00Z",
+      "days": 2,
+      "dueDate": "2024-03-20T08:00:00Z",
+      "items": [
+        "Conduct system integration tests",
+        "Resolve integration issues"
+      ],
+      "status": "In progress",
+      "description": "Test the interaction between different system components."
+    },
+    {
+      "id": 40,
+      "taskName": "Documentation Update",
+      "startDate": "2024-03-21T13:00:00Z",
+      "days": 3,
+      "dueDate": "2024-03-24T13:00:00Z",
+      "items": [
+        "Update user manuals",
+        "Revise technical documentation"
+      ],
+      "status": "On hold",
+      "description": "Keep documentation up-to-date with the latest changes."
+    }
+  ]
+}

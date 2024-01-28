@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Dashboard</h1>
+</div>
+<div class="row justify-content-end">
+  <div class="col-auto">
+    <div class="py-2 px-3 mb-2 rounded bg-secondary-subtle text-muted fw-medium">
+      <span>{{ startDate | date : 'yyyy MMM dd' }}</span> - <span>{{ endDate | date : 'yyyy MMM dd' }}</span>
+    </div>
+  </div>
+  <div class="col-12">
+    <canvas id="canvas">{{ chart }}</canvas>
+  </div>
+</div>

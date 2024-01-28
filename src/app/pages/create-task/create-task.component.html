@@ -1,0 +1,193 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Create task</h1>
+</div>
+<form [formGroup]="newTaskForm">
+  <div class="row mb-3 g-3">
+    <!-- Task -->
+    <div class="col-md-8">
+      <div class="card">
+        <h6 class="card-header">Task</h6>
+        <div class="card-body">
+          <div class="row">
+            <!-- Task Name -->
+            <div class="col-md-6">
+              <div class="mb-3 position-relative">
+                <label for="taskName" class="form-label">Task Name</label>
+                <input
+                  type="text"
+                  id="taskName"
+                  [ngClass]="{'is-invalid': (isSubmitted || newTaskForm.get('taskName')?.touched) && newTaskForm.get('taskName')?.invalid}"
+                  class="form-control"
+                  formControlName="taskName" />
+                @if ((isSubmitted || newTaskForm.get('taskName')?.touched) && newTaskForm.get('taskName')?.invalid) {
+                <div class="invalid-tooltip">
+                  @if (newTaskForm.get('taskName')?.hasError('minlength')) { Task name should be at least {{
+                  newTaskForm.get('taskName')?.errors?.['minlength']?.['requiredLength'] }} characters. } @else if
+                  (newTaskForm.get('taskName')?.hasError('maxlength')) { Task name should not exceed {{
+                  newTaskForm.get('taskName')?.errors?.['maxlength']?.['requiredLength'] }} characters. } @else if
+                  (newTaskForm.get('taskName')?.hasError('required')) { Please enter a task name. }
+                </div>
+                }
+              </div>
+            </div>
+
+            <!-- Start Date -->
+            <div class="col-md-6">
+              <div class="mb-3 position-relative">
+                <label for="startDate" class="form-label">Start Date</label>
+                <div
+                  class="input-group"
+                  [ngClass]="{'is-invalid': (isSubmitted || newTaskForm.get('startDate')?.touched) && newTaskForm.get('startDate')?.invalid}">
+                  <input
+                    id="startDate"
+                    formControlName="startDate"
+                    [ngClass]="{'is-invalid': (isSubmitted || newTaskForm.get('startDate')?.touched) && newTaskForm.get('startDate')?.invalid}"
+                    class="form-control"
+                    placeholder="yyyy-mm-dd"
+                    placement="auto"
+                    (dateSelect)="updateDueDate()"
+                    [minDate]="minStartDate"
+                    ngbDatepicker
+                    #d="ngbDatepicker" />
+                  <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
+                </div>
+                @if ((isSubmitted || newTaskForm.get('startDate')?.touched) && newTaskForm.get('startDate')?.invalid) {
+                <div class="invalid-tooltip">
+                  @if (newTaskForm.get('startDate')?.hasError('required')) { Please select a start date. } @else if ((isSubmitted ||
+                  newTaskForm.get('startDate')?.touched) && newTaskForm.get('startDate')?.hasError('ngbDate')) { Please select a start date equal to
+                  or greater than today. }
+                </div>
+                }
+              </div>
+            </div>
+
+            <!-- Duration -->
+            <div class="col-md-6">
+              <div class="mb-3 position-relative">
+                <label for="duration" class="form-label">Duration (in Days)</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  [min]="1"
+                  [max]="10"
+                  (keyup)="updateDueDate()"
+                  [ngClass]="{'is-invalid': (isSubmitted || newTaskForm.get('duration')?.touched) && newTaskForm.get('duration')?.invalid}"
+                  id="duration"
+                  formControlName="duration" />
+                @if ((isSubmitted || newTaskForm.get('duration')?.touched) && newTaskForm.get('duration')?.invalid) {
+                <div class="invalid-tooltip">Please enter a valid duration (1 to 10 days).</div>
+                }
+              </div>
+            </div>
+
+            <!-- Due Date -->
+            <div class="col-md-6">
+              <div class="mb-3 position-relative">
+                <label class="form-label">Due Date</label>
+                <input type="text" [disabled]="true" [value]="newTaskForm.get('dueDate')?.value" class="form-control" />
+              </div>
+            </div>
+
+            <!-- Status -->
+            <div class="col-md-6">
+              <div class="mb-3 position-relative">
+                <label for="status" class="form-label">Status</label>
+                <select
+                  id="status"
+                  [ngClass]="{'is-invalid': (isSubmitted || newTaskForm.get('status')?.touched) && newTaskForm.get('status')?.invalid}"
+                  class="form-select"
+                  formControlName="status"
+                  required>
+                  <option value="new" selected>New</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="on-hold">On Hold</option>
+                  <option value="completed">Completed</option>
+                </select>
+                @if ((isSubmitted || newTaskForm.get('status')?.touched) && newTaskForm.get('status')?.invalid) {
+                <div class="invalid-tooltip">Please select a status.</div>
+                }
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div class="col-md-12">
+              <div class="mb-3 position-relative">
+                <label for="description" class="form-label">Description</label>
+                <textarea
+                  id="description"
+                  [ngClass]="{'is-invalid': (isSubmitted || newTaskForm.get('description')?.touched) && newTaskForm.get('description')?.invalid}"
+                  class="form-control"
+                  formControlName="description"></textarea>
+                @if ((isSubmitted || newTaskForm.get('description')?.touched) && newTaskForm.get('description')?.invalid) {
+                <div class="invalid-tooltip">Please enter a valid description (min 20, max 500 characters).</div>
+                }
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-md-12">
+              <button type="button" (click)="onSubmit()" class="btn btn-primary">Create Task</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Items -->
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <h6 class="card-header">Items</h6>
+        <div class="card-body p-0">
+          <table class="table table-sm my-1">
+            <thead class="align-middle">
+              <tr>
+                <th scope="col">
+                  <button type="button" (click)="addItem(items.valid)" class="btn btn-sm btn-success text-nowrap">
+                    <i class="bi bi-plus-lg"></i>
+                  </button>
+                </th>
+                <th scope="col">Item name</th>
+              </tr>
+            </thead>
+            <tbody class="align-middle">
+              <ng-container formArrayName="items">
+                @for (item of items.controls; track item) {
+                <ng-container [formGroupName]="$index">
+                  <tr>
+                    <td>
+                      <button type="button" (click)="removeItem($index)" class="btn btn-sm btn-danger text-nowrap">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        formControlName="name"
+                        [ngClass]="{'is-invalid': (isSubmitted || items.at($index).get('name')?.touched) && items.at($index).get('name')?.invalid}"
+                        #itemNameRef
+                        (keyup.enter)="addItem(items.valid)"
+                        class="form-control form-control-sm" />
+
+                      @if ((isSubmitted || items.at($index).get('name')?.touched) && items.at($index).get('name')?.invalid) {
+                      <div class="invalid-tooltip">Please enter an item name.</div>
+                      }
+                    </td>
+                  </tr>
+                </ng-container>
+                }
+              </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+@if (showResult) {
+<div class="card mb-3">
+  <div class="card-body">
+    <pre autofocus>{{ showResult | json }}</pre>
+  </div>
+</div>
+}

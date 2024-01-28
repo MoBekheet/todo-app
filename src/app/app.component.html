@@ -1,0 +1,61 @@
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <span class="navbar-brand col-md-3 col-lg-2 me-0 px-3">To Do</span>
+  <button
+    class="navbar-toggler position-absolute d-md-none collapsed border-0"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#sidebarMenu"
+    aria-controls="sidebarMenu"
+    aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse navbar-collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact : true}"
+              data-bs-toggle="collapse"
+              data-bs-target=".navbar-collapse.show">
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/create-task"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact : true}"
+              data-bs-toggle="collapse"
+              data-bs-target=".navbar-collapse.show">
+              Create task
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/tasks"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact : true}"
+              data-bs-toggle="collapse"
+              data-bs-target=".navbar-collapse.show">
+              Tasks
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 dvh">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

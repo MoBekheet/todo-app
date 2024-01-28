@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+body {
+  font-size: 0.875rem;
+}
+
+:focus {
+  box-shadow: 0 0 0 0.1rem rgba(13, 110, 253, 0.25) !important;
+}
+
+button:focus {
+  box-shadow: none !important;
+}
+
+// remove dropdown arrow
+.dropdown-toggle::after {
+  display: none;
+}
