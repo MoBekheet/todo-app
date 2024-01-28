@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
-import { Task } from '../../shared/models/task.model';
-import { TasksService } from '../../shared/services/tasks.service';
+import { Task } from '@models/task.model';
+import { TasksService } from '@services/tasks.service';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -13,21 +13,32 @@ import { DatePipe } from '@angular/common';
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent implements OnInit {
+  // Initialize variables for the chart, start date, and end date
   chart: any = [];
   startDate: Date | null;
   endDate: Date | null;
+
+  // Instance of TasksService for fetching tasks data
   tasksService = inject(TasksService);
 
   ngOnInit() {
+    // Call the function to generate the chart
     this.generateChart();
   }
 
+  // Function to generate the chart using TasksService data
   generateChart() {
+    // Subscribe to the tasks data from the TasksService
     this.tasksService.bindTasks().subscribe(response => {
+      // Analyze the tasks data to extract relevant information
       const analyzeData = this.analyzeData(response?.data);
+
+      // Extract status counts and start/end dates
       const { New, Inprogress, Onhold, Completed } = analyzeData.statusCounts;
       this.startDate = analyzeData.startDate;
       this.endDate = analyzeData.endDate;
+
+      // Create a new Chart instance using Chart.js library
       this.chart = new Chart('canvas', {
         type: 'bar',
         data: {
@@ -62,6 +73,7 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  // Function to analyze tasks data and extract relevant information
   analyzeData(tasks: Task[]) {
     // Prepare data for analysis
     const analysisData = {

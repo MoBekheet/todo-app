@@ -61,21 +61,21 @@
               </div>
             </div>
 
-            <!-- Duration -->
+            <!-- Days -->
             <div class="col-md-6">
               <div class="mb-3 position-relative">
-                <label for="duration" class="form-label">Duration (in Days)</label>
+                <label for="days" class="form-label">Duration (in Days)</label>
                 <input
                   type="number"
                   class="form-control"
                   [min]="1"
                   [max]="10"
                   (keyup)="updateDueDate()"
-                  [ngClass]="{'is-invalid': (isSubmitted || newTaskForm.get('duration')?.touched) && newTaskForm.get('duration')?.invalid}"
-                  id="duration"
-                  formControlName="duration" />
-                @if ((isSubmitted || newTaskForm.get('duration')?.touched) && newTaskForm.get('duration')?.invalid) {
-                <div class="invalid-tooltip">Please enter a valid duration (1 to 10 days).</div>
+                  [ngClass]="{'is-invalid': (isSubmitted || newTaskForm.get('days')?.touched) && newTaskForm.get('days')?.invalid}"
+                  id="days"
+                  formControlName="days" />
+                @if ((isSubmitted || newTaskForm.get('days')?.touched) && newTaskForm.get('days')?.invalid) {
+                <div class="invalid-tooltip">Please enter a valid days (1 to 10 days).</div>
                 }
               </div>
             </div>
@@ -187,7 +187,7 @@
 @if (showResult) {
 <div class="card mb-3">
   <div class="card-body">
-    <pre autofocus>{{ showResult | json }}</pre>
+    <pre class="fw-bold" [innerHTML]="showResult | json" #result></pre>
   </div>
 </div>
 }

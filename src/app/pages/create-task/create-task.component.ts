@@ -49,7 +49,7 @@ export class CreateTaskComponent implements OnInit {
     this.newTaskForm = this.formBuilder.group({
       taskName: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(100)]],
       startDate: ['', Validators.required],
-      duration: [1, [Validators.required, Validators.min(1), Validators.max(10)]],
+      days: [1, [Validators.required, Validators.min(1), Validators.max(10)]],
       dueDate: [{ value: '', disabled: true }],
       items: this.formBuilder.array(
         [
@@ -73,20 +73,20 @@ export class CreateTaskComponent implements OnInit {
 
   // region Due Date Update
 
-  // updateDueDate updates the due date based on the start date and task duration.
+  // updates the due date based on the start date and task days.
   updateDueDate(): void {
-    // Extract duration and start date from the form.
-    const duration = this.newTaskForm.get('duration')?.value as number;
+    // Extract days and start date from the form.
+    const days = this.newTaskForm.get('days')?.value as number;
     const startDate = this.getDateWithFormat(this.newTaskForm.get('startDate')?.value);
 
-    // Check if the start date and duration are valid.
-    if (startDate && !isNaN(new Date(startDate).getTime()) && duration > 0) {
+    // Check if the start date and days are valid.
+    if (startDate && !isNaN(new Date(startDate).getTime()) && days > 0) {
       // Calculate due date and update the form control.
       const dueDate = new Date(startDate);
-      dueDate.setDate(dueDate.getDate() + duration);
+      dueDate.setDate(dueDate.getDate() + days);
       this.newTaskForm.get('dueDate')?.setValue(this.datePipe.transform(dueDate, 'yyyy-MM-dd'));
     } else {
-      // Invalid start date or duration, clear due date.
+      // Invalid start date or days, clear due date.
       this.newTaskForm.get('dueDate')?.reset('');
     }
   }
