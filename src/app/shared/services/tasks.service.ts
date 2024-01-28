@@ -133,7 +133,7 @@ export class TasksService {
 
   // Setter for updating the search term
   set searchTerm(searchTerm: string) {
-    this.setState({ searchTerm });
+    this.setState({ searchTerm: searchTerm.trim() });
   }
 
   // Setter for updating the sort type
